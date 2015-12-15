@@ -9,6 +9,9 @@ clean:
 
 all:	clean $(patsubst %.js,%.min.js,$(wildcard *.js))
 
+test:
+	$(JSLINT) localCache.js
+
 %.min.js:	%.js
 	$(JS) -o $@ -- $<
 
